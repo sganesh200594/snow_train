@@ -3,7 +3,7 @@ from snowflake.snowpark.functions import col
 import json
 
 def main(session: snowpark.Session):
-    data = get_data_from_stage(session, 'training', 'snowf_train_stage')
+    data = get_data_from_stage(session, 'train', 'snowflake_train_stage')
     table_data = get_dataframe(session, data)
     table_creation = create_table(session, 'HOUSE_PRICING', table_data)
     return table_data
